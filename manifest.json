@@ -1,0 +1,25 @@
+
+  {
+    "name": "Memoria Emojis",
+    "short_name": "Memoria Emojis",
+    "start_url": "index.html",
+    "display": "standalone",
+    "background_color": "#fdfdfd",
+    "theme_color": "##20913e",
+    "orientation": "portrait-primary",
+    "icons": [
+      {
+        "src": "cartoes.png",
+        "type": "image/png", "sizes": "72x72"
+      },
+      {
+        "src": "cartoes.png",
+        "type": "image/png", "sizes": "96x96"
+      },
+      {
+        "src": "cartoes.png",
+        "type": "image/png", "sizes": "120x120"
+      }
+      
+    ]
+  }

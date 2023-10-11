@@ -1,0 +1,221 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height:100vh;
+    background: linear-gradient(20deg,rgba(25, 178, 94, 0.64),rgb(13, 226, 245));
+    user-select: none;
+}
+
+.container{
+    position: relative;
+    width: 80%;    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    background-color: azure;
+    padding: 40px 60px;
+    border-radius:10px;
+}
+
+h2{
+    padding: 1px 1px;
+    /*Colocando letras com cor gradiente*/
+    background-image: linear-gradient(rgb(33, 145, 249),rgb(33, 245, 44));/*Definindo a cor do gradiente com um fundo   */
+    background-clip: text;      /*apagar o fundo */
+    -webkit-background-clip: text;     /*alguns navegadores precisam do prefixo*/
+    -webkit-text-fill-color: transparent;  /*apagar o texto,deixando apenas o fundo*/
+    color: black; /*caso o navegador nao suporte o gradiente */
+    letter-spacing: 0.1rem;
+    border-bottom: 3px solid rgb(195, 205, 195);
+    text-transform: uppercase;
+    text-align: center;
+    width: 300px; 
+}
+
+.reset{
+    padding: 15px 20px;
+    width: 50%;
+    background:linear-gradient(225deg,rgb(128, 0, 238),rgb(128, 0, 43)) ;
+    color: white;
+    border-radius: 15px;
+    border: none;    
+    box-shadow: -5px 5px 10px #c74add,
+                 5px -5px 10px #ebb5e8;
+    cursor: pointer;
+    letter-spacing: 0.3rem;
+}
+
+
+.reset:focus{    
+    background: linear-gradient(45deg,rgb(255, 0,38),rgb(128, 0, 43));
+    box-shadow:  -5px 2px 10px #e357af,
+                 5px -3px 10px #5a1e41;
+}
+
+.game{
+    width:60%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    transform-style: preserve-3d;
+    perspective: 500px;
+     
+}
+
+
+.item{
+    position:relative;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(212, 245, 255);
+    font-size: 50px;
+    transform: matrix(180deg);  
+    transition:0.25s;
+}
+
+.item::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #171717;
+    border-radius: 10px;
+    transform: matrix(0deg);
+    transition: 0.25s;
+    backface-visibility: hidden;
+    
+}
+
+.item.boxOpen{
+    transform: rotate(0deg);
+}
+
+.boxOpen::after, .boxMatch::after{
+    transform: rotateY(180deg);
+}
+
+@media (max-width: 768px) {
+    .container{
+        width:100%;
+        height:600px;
+        display: flex;
+        padding: 30px 15px;
+       }
+
+    .game{
+        width: 100%;
+        height:450px;       
+    }
+
+    .item{
+        width: 80px;
+        height: 80px;
+        font-size: 40px;
+    }
+}
+
+
+
+.modal-container{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(4, 4, 15, 0.896);
+    position:fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;   
+    
+}
+
+.active{
+    display: flex;
+}
+
+.parabens{
+    width: 50%;
+    height: 20%;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.337);
+    border-radius: 20px;
+    box-shadow: 0px 10px 18px rgb(16, 254, 246);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;    
+    align-items: center;
+}
+
+.parabens h2{
+    border: none;
+    width: 100%;
+    font-size: 2rem;
+    background-image: linear-gradient(225deg,rgb(237, 28, 237),orange);
+    background-clip: text;
+    -webkit-background-clip: text;     /*alguns navegadores precisam do prefixo*/
+    -webkit-text-fill-color: transparent;
+    animation: pulse .7s infinite;
+}
+
+@keyframes pulse{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+
+}
+
+.parabens div{
+    width: 100%;
+    padding: 60px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.parabens div p{
+    font-size: 100px;
+}
+
+.parabens div p:first-child{
+    animation: go-back 1s infinite alternate;
+}
+
+@keyframes go-back{
+    0%{
+        transform:translateY(20px);
+    }   
+    
+    100%{
+        transform: translateY(0);
+    }
+}
+.parabens div p:last-child{
+    animation: go-back2 2s infinite;
+}
+
+@keyframes go-back2{
+    0%{
+        transform:rotate(0deg);
+    }
+    50%{
+        transform: rotate(-90deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+
+}
