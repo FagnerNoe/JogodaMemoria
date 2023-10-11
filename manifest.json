@@ -9,15 +9,15 @@
     "orientation": "portrait-primary",
     "icons": [
       {
-        "src": "cartoes.png",
+        "src": "/image/cartoes.png",
         "type": "image/png", "sizes": "72x72"
       },
       {
-        "src": "cartoes.png",
+        "src": "/image/cartoes.png",
         "type": "image/png", "sizes": "96x96"
       },
       {
-        "src": "cartoes.png",
+        "src": "/image/cartoes.png",
         "type": "image/png", "sizes": "120x120"
       }
       

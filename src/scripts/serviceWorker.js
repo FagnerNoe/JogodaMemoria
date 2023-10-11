@@ -1,5 +1,6 @@
 const JogoMemoria= "jogo-da-memoria";
 const assets = [
+  "src",
   "/",
   "/index.html",
   "/style.css",
